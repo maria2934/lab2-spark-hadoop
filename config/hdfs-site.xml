@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!-- Репликация: 3 копии -->
+  <property>
+    <name>dfs.replication</name>
+    <value>3</value>
+  </property>
+
+  <!-- Три директории для 3 DataNode -->
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>
+      file:///Users/mariia/Desktop/lab2-spark-hadoop/hadoop/storage/datanode1,
+      file:///Users/mariia/Desktop/lab2-spark-hadoop/hadoop/storage/datanode2,
+      file:///Users/mariia/Desktop/lab2-spark-hadoop/hadoop/storage/datanode3
+    </value>
+  </property>
+
+  <!-- NameNode хранит метаданные здесь -->
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:///Users/mariia/Desktop/lab2-spark-hadoop/hadoop/storage/namenode</value>
+  </property>
+
+  <!-- DataNode слушает все интерфейсы -->
+  <property>
+    <name>dfs.datanode.address</name>
+    <value>0.0.0.0:9866</value>
+  </property>
+
+  <!-- HTTP-интерфейс DataNode -->
+  <property>
+    <name>dfs.datanode.http.address</name>
+    <value>0.0.0.0:9867</value>
+  </property>
+</configuration>
