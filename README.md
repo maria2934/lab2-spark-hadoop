@@ -88,11 +88,15 @@
 
 ## Развёртывание Hadoop
 
-### Этапы (кратко)
+### Шаги (кратко)
 
 1. Скачали Hadoop 3.3.6
 
+curl -O https://archive.apache.org/dist/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz
+
 <img width="1238" height="140" alt="image" src="https://github.com/user-attachments/assets/71245945-c6ab-4a8d-8ba6-f95415de4bbd" />
+
+tar -xzf ~/Downloads/hadoop-3.3.6.tar.gz -C ~/.hadoop --strip-components=1
 
 3. Создали симлинки
    
@@ -100,7 +104,9 @@ mkdir -p ~/.sdkman/candidates/hadoop
 ln -sfn ~/.hadoop ~/.sdkman/candidates/hadoop/3.3.6    
 ln -sfn ~/.hadoop ~/.sdkman/candidates/hadoop/current    
 
-4. Установили Hadoop
+4. Проверили, что Hadoop установлен
+
+hadoop version
 
 <img width="1126" height="278" alt="image" src="https://github.com/user-attachments/assets/3598e745-05b7-4f70-9b1f-82a2a698da05" />
 
@@ -183,15 +189,30 @@ yarn-site.xml
 </configuration>
 ```
 
-8. Запустили
+8. Отформатировали и запустили
+
+hdfs namenode -format   
+start-dfs.sh    
+
+10. Преверили, что HDFS работает
+
+jps   
 
 <img width="624" height="276" alt="image" src="https://github.com/user-attachments/assets/782e1fa4-1405-4e25-ab84-49b8584155a4" />
 
-9. Загрузили crypto_dataset.csv в HDFS
+11. Загрузили crypto_dataset.csv в HDFS
+
+hdfs dfs -put ~/Desktop/lab2-spark-hadoop/data/crypto_dataset.csv /input/
+
+12. Проверили список файлов в HDFS в папке 
+
+hdfs dfs -ls /input
 
 <img width="1126" height="52" alt="image" src="https://github.com/user-attachments/assets/92e527aa-31f6-4b12-9c51-68103d1069c7" />
 
-10. Проверили, что HDFS работает стабильно
+13. Еще раз проверили, что HDFS работает стабильно
+
+hdfs dfsadmin -report
 
 <img width="930" height="1126" alt="image" src="https://github.com/user-attachments/assets/584a9dfa-992e-4f05-a0a4-f4d4628990b3" />
 
