@@ -1,0 +1,19 @@
+{
+    "Experiment": "exp_3dn_optimized",
+    "Configuration": "3-optimized=true",
+    "DataNodes": 3,
+    "Optimized": true,
+    "Total time (s)": 5.288,
+    "Memory (MB)": 59.188,
+    "First groupBy time (s)": 0.739,
+    "Second groupBy time (s)": 0.11,
+    "Speedup (x)": 6.74,
+    "Rows processed": 200000,
+    "Aggregation result": {
+        "Sales": 115281.01,
+        "Marketing": 115162.06,
+        "IT": 115066.85,
+        "HR": 115187.87,
+        "Finance": 115098.55
+    }
+}

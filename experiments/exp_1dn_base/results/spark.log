@@ -1,0 +1,71 @@
+26/06/06 13:53:59 WARN Utils: Your hostname, MacBook-Air-Mariia.local resolves to a loopback address: 127.0.0.1; using 192.168.0.109 instead (on interface en0)
+26/06/06 13:53:59 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+26/06/06 13:54:00 INFO SparkContext: Running Spark version 3.5.0
+26/06/06 13:54:00 INFO SparkContext: OS info Mac OS X, 15.6.1, aarch64
+26/06/06 13:54:00 INFO SparkContext: Java version 11.0.31
+26/06/06 13:54:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/06/06 13:54:00 INFO ResourceUtils: ==============================================================
+26/06/06 13:54:00 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/06/06 13:54:00 INFO ResourceUtils: ==============================================================
+26/06/06 13:54:00 INFO SparkContext: Submitted application: Lab2_exp_1dn_base
+26/06/06 13:54:00 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 512, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/06/06 13:54:00 INFO ResourceProfile: Limiting resource is cpu
+26/06/06 13:54:00 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/06/06 13:54:00 INFO SecurityManager: Changing view acls to: mariia
+26/06/06 13:54:00 INFO SecurityManager: Changing modify acls to: mariia
+26/06/06 13:54:00 INFO SecurityManager: Changing view acls groups to: 
+26/06/06 13:54:00 INFO SecurityManager: Changing modify acls groups to: 
+26/06/06 13:54:00 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: mariia; groups with view permissions: EMPTY; users with modify permissions: mariia; groups with modify permissions: EMPTY
+26/06/06 13:54:00 INFO Utils: Successfully started service 'sparkDriver' on port 65065.
+26/06/06 13:54:00 INFO SparkEnv: Registering MapOutputTracker
+26/06/06 13:54:00 INFO SparkEnv: Registering BlockManagerMaster
+26/06/06 13:54:00 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/06/06 13:54:00 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/06/06 13:54:00 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/06/06 13:54:00 INFO DiskBlockManager: Created local directory at /private/var/folders/tf/lk1c7nk927g22_dsdlk98_8r0000gn/T/blockmgr-2dc2c126-d941-4889-a926-efdd710cd759
+26/06/06 13:54:00 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/06/06 13:54:00 INFO SparkEnv: Registering OutputCommitCoordinator
+26/06/06 13:54:00 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/06/06 13:54:00 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+26/06/06 13:54:00 INFO Utils: Successfully started service 'SparkUI' on port 4041.
+26/06/06 13:54:00 INFO Executor: Starting executor ID driver on host 192.168.0.109
+26/06/06 13:54:00 INFO Executor: OS info Mac OS X, 15.6.1, aarch64
+26/06/06 13:54:00 INFO Executor: Java version 11.0.31
+26/06/06 13:54:00 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/06/06 13:54:00 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@37d5f529 for default.
+26/06/06 13:54:00 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 65066.
+26/06/06 13:54:00 INFO NettyBlockTransferService: Server created on 192.168.0.109:65066
+26/06/06 13:54:00 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/06/06 13:54:00 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.0.109, 65066, None)
+26/06/06 13:54:00 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.0.109:65066 with 434.4 MiB RAM, BlockManagerId(driver, 192.168.0.109, 65066, None)
+26/06/06 13:54:00 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.0.109, 65066, None)
+26/06/06 13:54:00 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.0.109, 65066, None)
+Чтение данных из HDFS с inferSchema=True...
+Загружено строк: 200000
+root
+ |-- user_id: integer (nullable = true)
+ |-- age: integer (nullable = true)
+ |-- salary: double (nullable = true)
+ |-- experience_years: integer (nullable = true)
+ |-- department: string (nullable = true)
+ |-- is_active: boolean (nullable = true)
+ |-- join_date: date (nullable = true)
+ |-- rating: double (nullable = true)
+
+Выполняем groupBy и avg(salary)...
++----------+------------------+
+|department|       avg(salary)|
++----------+------------------+
+|     Sales|115281.01248807153|
+| Marketing|115162.06094055703|
+|        IT| 115066.8488750779|
+|        HR|115187.87051831243|
+|   Finance|115098.55433481939|
++----------+------------------+
+
+
+Эксперимент exp_1dn_base завершён:
+Время выполнения: 5.18 сек
+Пиковая RAM (драйвер): 58.8 МБ
+
+ Результаты сохранены в JSON: results.json

@@ -1,0 +1,16 @@
+{
+    "Experiment": "exp_3dn_base",
+    "Configuration": "3-optimized=false",
+    "DataNodes": 3,
+    "Optimized": false,
+    "Total time (s)": 5.078,
+    "Memory (MB)": 58.922,
+    "Rows processed": 200000,
+    "Aggregation result": {
+        "Sales": 115281.01,
+        "Marketing": 115162.06,
+        "IT": 115066.85,
+        "HR": 115187.87,
+        "Finance": 115098.55
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "Experiment": "exp_1dn_base",
+    "Configuration": "1-optimized=false",
+    "DataNodes": 1,
+    "Optimized": false,
+    "Total time (s)": 5.178,
+    "Memory (MB)": 58.812,
+    "Rows processed": 200000,
+    "Aggregation result": {
+        "Sales": 115281.01,
+        "Marketing": 115162.06,
+        "IT": 115066.85,
+        "HR": 115187.87,
+        "Finance": 115098.55
+    }
+}
